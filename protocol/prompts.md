@@ -20,7 +20,7 @@ Dispatch: one fresh context per call, model Fable, effort high. The evidence pac
 > {question text}
 >
 > EVIDENCE
-> The evidence pack is the single file {pack path}. Read all of it before you answer. It contains official documents only, captured at {cutoff time}. Read no other file. Use no web search, no browser and no other tool. Ask no one anything.
+> The evidence pack is the single file {pack path}. Read all of it before you answer. It contains official documents only, captured at {cutoff time}. Read no other file. Use no web search and no browser. Ask no one anything.
 >
 > HOW TO WORK
 > 1. Say what the Committee did at its recent meetings and what its own documents and members signal about this one.
@@ -31,6 +31,9 @@ Dispatch: one fresh context per call, model Fable, effort high. The evidence pac
 >
 > ANSWER FORMAT
 > {answer format}
+>
+> DELIVERY
+> Write your whole answer, ending with the FORECAST line, to the file {answer path}. Use your tools only to read the evidence pack and to write that one file. Then reply with the single word DONE.
 
 ## Deliberate arm
 
