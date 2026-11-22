@@ -16,7 +16,12 @@ assert reason("FORECAST | cut50=0.5 ; cut25=0.5 ; hold=15 ; hike25=84") == "miss
 assert reason("FORECAST | cut50=0.005 ; cut25=0.005 ; hold=0.15 ; hike25=0.78 ; hike50=0.06") == "sum_out_of_band"   # decimals, not percentages
 assert reason("FORECAST | cut50=0.5 ; cut25=0.5 ; hold=15 ; hike25=78 ; hike50=5") == "sum_out_of_band"            # sums to 99.0
 assert reason("FORECAST | cut50=0 ; cut25=1 ; hold=15 ; hike25=78 ; hike50=6") == "out_of_range"
-assert reason("FORECAST | cut50=__ ; cut25=__ ; hold=__ ; hike25=__ ; hike50=__") == "malformed"                   # template returned unfilled
+assert reason("FORECAST | cut50=__ ; cut25=__ ; hold=__ ; hike25=__ ; hike50=__") == "no_line"                     # template returned unfilled
+assert reason("FORECAST | cut50=A ; cut25=B ; hold=C ; hike25=D ; hike50=E") == "no_line"                          # template returned unfilled
+assert reason("FORECAST | cut50=A ; cut25=B ; hold=C ; hike25=D ; hike50=E\nwork...\n" + GOOD) == "ok"           # question restated, then answered
+assert reason('"' + GOOD + '"') == "ok"                                    # quotation marks ignored
+assert reason("FORECAST | cut50=x1 ; cut25=0.5 ; hold=15 ; hike25=78 ; hike50=6") == "malformed"
+assert reason('The format is "FORECAST | cut50=1 ; cut25=1 ; hold=10 ; hike25=80 ; hike50=8" as above.\n' + GOOD) == "ok"  # only a line that starts with FORECAST counts
 assert reason("FORECAST | cut50=0.5 ; cut25=0.5 ; hold=15 ; hike25=78 ; hike25=6") == "bad_keys"
 assert reason("FORECAST | cut50=0.5 ; cut25=0.5 ; hold=15 ; hike25=78 ; raise50=6") == "bad_keys"
 # the line governs even when a table elsewhere disagrees

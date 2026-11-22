@@ -12,7 +12,14 @@ import re
 
 OUTCOMES = ["cut50", "cut25", "hold", "hike25", "hike50"]  # ordered from lowest rate to highest
 UNIFORM = {k: 20.0 for k in OUTCOMES}  # failure policy: 20% on each outcome
-_DECORATION = "*`_> \t"  # markdown characters ignored at either end of a line
+_DECORATION = "*`_>\"' \t"  # markdown and quote characters ignored at either end of a line
+_ECHO_PART = re.compile(r"(cut50|cut25|hold|hike25|hike50)=[a-z_]*")  # a blank or letter placeholder
+
+
+def _is_template_echo(line):
+    """True for the answer-format template repeated back with its placeholders unfilled."""
+    parts = [x for x in line.split("|", 1)[1].lower().split(";") if x]
+    return len(parts) == len(OUTCOMES) and all(_ECHO_PART.fullmatch(x) for x in parts)
 
 
 def _forecast_lines(text):
@@ -20,7 +27,9 @@ def _forecast_lines(text):
     for raw in text.splitlines():
         s = raw.strip(_DECORATION)
         if re.match(r"FORECAST\s*\|", s):
-            lines.append(re.sub(r"\s+", "", s))
+            line = re.sub(r"\s+", "", s)
+            if not _is_template_echo(line):
+                lines.append(line)
     return lines
 
 
@@ -33,6 +42,7 @@ def parse_forecast(text):
 
     Valid only if: exactly one distinct FORECAST line; the five outcomes, each once;
     every value above 0 and below 100; sum between 99.5 and 100.5 (then rescaled to 100).
+    A line that only repeats the format template with unfilled placeholders is ignored.
     Nothing else in the answer is read. Nothing is repaired or guessed.
     """
     lines = _forecast_lines(text)
