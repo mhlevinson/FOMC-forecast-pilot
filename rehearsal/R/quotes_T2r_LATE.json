@@ -1,0 +1,264 @@
+{
+ "label": "REHEARSAL - unscored; LATE re-capture 15:27-15:30Z, NOT T2 (T2 was 13:05-13:07Z)",
+ "capture": "T2r",
+ "questions": {
+  "FOMC-2026-12": {
+   "kalshi": {
+    "valid": true,
+    "vector": {
+     "cut50": 0.4975124378109453,
+     "cut25": 0.4975124378109453,
+     "hold": 3.482587064676617,
+     "hike25": 93.03482587064677,
+     "hike50": 2.487562189054726
+    },
+    "sum_before": 100.5,
+    "flags": [
+     "one_sided:cut50",
+     "one_sided:cut25"
+    ],
+    "quotes": {
+     "cut25": {
+      "bid": 0.0,
+      "ask": 1.0,
+      "last": 1.0,
+      "bid_size": 0.0,
+      "ask_size": 1143582.31,
+      "id": "KXFEDDECISION-26DEC-C25"
+     },
+     "hike25": {
+      "bid": 93.0,
+      "ask": 94.0,
+      "last": 94.0,
+      "bid_size": 74103.23,
+      "ask_size": 65952.73,
+      "id": "KXFEDDECISION-26DEC-H25"
+     },
+     "hold": {
+      "bid": 3.0,
+      "ask": 4.0,
+      "last": 4.0,
+      "bid_size": 210145.9,
+      "ask_size": 82067.54,
+      "id": "KXFEDDECISION-26DEC-H0"
+     },
+     "cut50": {
+      "bid": 0.0,
+      "ask": 1.0,
+      "last": 1.0,
+      "bid_size": 0.0,
+      "ask_size": 1474767.15,
+      "id": "KXFEDDECISION-26DEC-C26"
+     },
+     "hike50": {
+      "bid": 2.0,
+      "ask": 3.0,
+      "last": 3.0,
+      "bid_size": 159800.81,
+      "ask_size": 177506.62,
+      "id": "KXFEDDECISION-26DEC-H26"
+     }
+    },
+    "file": "fomcpilot-R-T2r-kalshi-26DEC-markets.json"
+   },
+   "polymarket": {
+    "valid": true,
+    "vector": {
+     "cut50": 0.15052684395383845,
+     "cut25": 0.35122930255895635,
+     "hold": 3.7631710988459606,
+     "hike25": 93.82839939789262,
+     "hike50": 1.90667335674862
+    },
+    "sum_before": 99.65,
+    "flags": [],
+    "quotes": {
+     "cut50": {
+      "bid": 0.1,
+      "ask": 0.2,
+      "last": 0.2,
+      "bid_size": null,
+      "ask_size": null,
+      "id": "17640596861394454242836532536014033416733783473450136742726948856144855149507"
+     },
+     "cut25": {
+      "bid": 0.3,
+      "ask": 0.4,
+      "last": 0.4,
+      "bid_size": null,
+      "ask_size": null,
+      "id": "77367448845023382525249480243608609306658725883285195065573683809293972009019"
+     },
+     "hold": {
+      "bid": 3.7,
+      "ask": 3.8,
+      "last": 3.9,
+      "bid_size": null,
+      "ask_size": null,
+      "id": "42865728742506860386768556888821101266630139112044622335353850919229585308601"
+     },
+     "hike25": {
+      "bid": 93.0,
+      "ask": 94.0,
+      "last": 93.0,
+      "bid_size": null,
+      "ask_size": null,
+      "id": "111662129652828266889360374468657435151479595863413519836161861837506140152890"
+     },
+     "hike50": {
+      "bid": 1.8,
+      "ask": 2.0,
+      "last": 1.8,
+      "bid_size": null,
+      "ask_size": null,
+      "id": "35090254409399344650860070211816464534198960801264823587796928404808383727584"
+     }
+    },
+    "file": "fomcpilot-R-T2r-polymarket-26DEC-event.json"
+   },
+   "benchmark": {
+    "benchmark": {
+     "cut50": 0.3240196408823919,
+     "cut25": 0.4243708701849508,
+     "hold": 3.6228790817612886,
+     "hike25": 93.4316126342697,
+     "hike50": 2.197117772901673
+    },
+    "venues_used": [
+     "kalshi",
+     "polymarket"
+    ],
+    "flags": []
+   }
+  },
+  "FOMC-2027-01": {
+   "kalshi": {
+    "valid": true,
+    "vector": {
+     "cut50": 0.4854368932038835,
+     "cut25": 1.941747572815534,
+     "hold": 42.23300970873787,
+     "hike25": 53.398058252427184,
+     "hike50": 1.941747572815534
+    },
+    "sum_before": 103.0,
+    "flags": [
+     "one_sided:cut50"
+    ],
+    "quotes": {
+     "cut50": {
+      "bid": 0.0,
+      "ask": 1.0,
+      "last": 1.0,
+      "bid_size": 0.0,
+      "ask_size": 999.0,
+      "id": "KXFEDDECISION-27JAN-C26"
+     },
+     "hold": {
+      "bid": 43.0,
+      "ask": 44.0,
+      "last": 43.0,
+      "bid_size": 625.83,
+      "ask_size": 797.12,
+      "id": "KXFEDDECISION-27JAN-H0"
+     },
+     "hike25": {
+      "bid": 54.0,
+      "ask": 56.0,
+      "last": 57.0,
+      "bid_size": 294.04,
+      "ask_size": 4.0,
+      "id": "KXFEDDECISION-27JAN-H25"
+     },
+     "hike50": {
+      "bid": 1.0,
+      "ask": 3.0,
+      "last": 3.0,
+      "bid_size": 11182.4,
+      "ask_size": 2154.37,
+      "id": "KXFEDDECISION-27JAN-H26"
+     },
+     "cut25": {
+      "bid": 1.0,
+      "ask": 3.0,
+      "last": 4.0,
+      "bid_size": 17792.99,
+      "ask_size": 25.77,
+      "id": "KXFEDDECISION-27JAN-C25"
+     }
+    },
+    "file": "fomcpilot-R-T2r-kalshi-27JAN-markets.json"
+   },
+   "polymarket": {
+    "valid": true,
+    "vector": {
+     "cut50": 0.5467196819085488,
+     "cut25": 1.043737574552684,
+     "hold": 42.246520874751496,
+     "hike25": 55.16898608349901,
+     "hike50": 0.9940357852882704
+    },
+    "sum_before": 100.6,
+    "flags": [],
+    "quotes": {
+     "cut50": {
+      "bid": 0.5,
+      "ask": 0.6,
+      "last": 0.5,
+      "bid_size": null,
+      "ask_size": null,
+      "id": "45053521911672808043600263178798111402897730682087979734684574823004307023433"
+     },
+     "cut25": {
+      "bid": 1.0,
+      "ask": 1.1,
+      "last": 1.0,
+      "bid_size": null,
+      "ask_size": null,
+      "id": "55531205670373260499988385930313327116586167390725681551489621136380793885916"
+     },
+     "hold": {
+      "bid": 42.0,
+      "ask": 43.0,
+      "last": 43.0,
+      "bid_size": null,
+      "ask_size": null,
+      "id": "63563009510989471204377539732457086916124654411092982704760023438039220215330"
+     },
+     "hike25": {
+      "bid": 55.0,
+      "ask": 56.0,
+      "last": 56.0,
+      "bid_size": null,
+      "ask_size": null,
+      "id": "58421987972100586826330616250690474504359298033602990223828098109695719571344"
+     },
+     "hike50": {
+      "bid": 0.9,
+      "ask": 1.1,
+      "last": 1.0,
+      "bid_size": null,
+      "ask_size": null,
+      "id": "42452047366442275682382090045397807109079755041679563479952649068752467853296"
+     }
+    },
+    "file": "fomcpilot-R-T2r-polymarket-27JAN-event.json"
+   },
+   "benchmark": {
+    "benchmark": {
+     "cut50": 0.5160782875562162,
+     "cut25": 1.492742573684109,
+     "hold": 42.23976529174468,
+     "hike25": 54.2835221679631,
+     "hike50": 1.467891679051902
+    },
+    "venues_used": [
+     "kalshi",
+     "polymarket"
+    ],
+    "flags": []
+   }
+  }
+ },
+ "written_utc": "2026-11-23T15:31:16Z"
+}
