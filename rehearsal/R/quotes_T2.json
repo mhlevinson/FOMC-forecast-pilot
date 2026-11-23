@@ -1,0 +1,112 @@
+{
+ "label": "REHEARSAL - unscored",
+ "capture": "T2",
+ "questions": {
+  "FOMC-2026-12": {
+   "kalshi": {
+    "valid": true,
+    "vector": {
+     "cut50": 0.4975124378109453,
+     "cut25": 0.4975124378109453,
+     "hold": 5.472636815920398,
+     "hike25": 91.04477611940298,
+     "hike50": 2.487562189054726
+    },
+    "sum_before": 100.5,
+    "flags": [
+     "one_sided:cut50",
+     "one_sided:cut25"
+    ],
+    "quotes": {
+     "cut25": {
+      "bid": 0.0,
+      "ask": 1.0,
+      "last": 1.0,
+      "bid_size": 0.0,
+      "ask_size": 1068636.82,
+      "id": "KXFEDDECISION-26DEC-C25"
+     },
+     "hike25": {
+      "bid": 91.0,
+      "ask": 92.0,
+      "last": 91.0,
+      "bid_size": 83921.25,
+      "ask_size": 18418.05,
+      "id": "KXFEDDECISION-26DEC-H25"
+     },
+     "hold": {
+      "bid": 5.0,
+      "ask": 6.0,
+      "last": 6.0,
+      "bid_size": 401.45,
+      "ask_size": 111373.08,
+      "id": "KXFEDDECISION-26DEC-H0"
+     },
+     "cut50": {
+      "bid": 0.0,
+      "ask": 1.0,
+      "last": 1.0,
+      "bid_size": 0.0,
+      "ask_size": 1398149.08,
+      "id": "KXFEDDECISION-26DEC-C26"
+     },
+     "hike50": {
+      "bid": 2.0,
+      "ask": 3.0,
+      "last": 3.0,
+      "bid_size": 160575.33,
+      "ask_size": 220588.17,
+      "id": "KXFEDDECISION-26DEC-H26"
+     }
+    },
+    "file": "fomcpilot-R-T2-kalshi-26DEC-markets.json"
+   },
+   "polymarket": {
+    "valid": false,
+    "flags": [
+     "file_missing"
+    ],
+    "file": "fomcpilot-R-T2-polymarket-26DEC-event.json"
+   },
+   "benchmark": {
+    "benchmark": {
+     "cut50": 0.4975124378109453,
+     "cut25": 0.4975124378109453,
+     "hold": 5.472636815920398,
+     "hike25": 91.04477611940298,
+     "hike50": 2.487562189054726
+    },
+    "venues_used": [
+     "kalshi"
+    ],
+    "flags": [
+     "one_venue"
+    ]
+   }
+  },
+  "FOMC-2027-01": {
+   "kalshi": {
+    "valid": false,
+    "flags": [
+     "file_missing"
+    ],
+    "file": "fomcpilot-R-T2-kalshi-27JAN-markets.json"
+   },
+   "polymarket": {
+    "valid": false,
+    "flags": [
+     "file_missing"
+    ],
+    "file": "fomcpilot-R-T2-polymarket-27JAN-event.json"
+   },
+   "benchmark": {
+    "benchmark": null,
+    "venues_used": [],
+    "flags": [
+     "no_benchmark"
+    ]
+   }
+  }
+ },
+ "written_utc": "2026-11-23T15:31:16Z"
+}

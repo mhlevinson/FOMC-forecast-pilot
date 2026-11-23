@@ -1,0 +1,11 @@
+{
+ "label": "REHEARSAL - twin run (starting claim hike25), diagnostic only, not scored",
+ "D_twin": {
+  "valid": false,
+  "reason": "no_line",
+  "line": null,
+  "sum_stated": null,
+  "forecast": null
+ },
+ "parsed_utc": "2026-11-23T14:19:55Z"
+}

@@ -1,0 +1,15 @@
+{
+  "label": "DIAGNOSTIC ONLY - extracted by regex from a FORECAST string embedded mid-line in D_scored.md; the parser rejected the file (no_line); never scored, not part of the commitment bundle",
+  "source": "answers/D_scored.md",
+  "method": "regex FORECAST \\| cut50=<num> ; ... over the whole file, numeric values only",
+  "matches": [
+    {
+      "cut50": 0.5,
+      "cut25": 1.0,
+      "hold": 32.0,
+      "hike25": 57.9,
+      "hike50": 8.6
+    }
+  ],
+  "extracted_utc": "2026-11-23T12:42:16Z"
+}

@@ -1,0 +1,22 @@
+{
+ "label": "DIAGNOSTIC ONLY - regex extraction over D_twin.md of any filled FORECAST string; never scored, not part of the commitment bundle",
+ "source": "answers/D_twin.md",
+ "parser_result": {
+  "valid": false,
+  "reason": "no_line",
+  "line": null,
+  "sum_stated": null,
+  "forecast": null
+ },
+ "method": "same regex as D_scored diagnostic",
+ "matches": [
+  {
+   "cut50": 0.5,
+   "cut25": 1.5,
+   "hold": 29.0,
+   "hike25": 66.0,
+   "hike50": 3.0
+  }
+ ],
+ "extracted_utc": "2026-11-23T14:19:55Z"
+}
