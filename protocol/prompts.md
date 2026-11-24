@@ -59,7 +59,7 @@ The forecast is read by `forecast_tools.parse_forecast` from the file the elicit
 
 ## Elicitation step (part of the Deliberate arm, amendment 15)
 
-The arm is named "Deliberate plus elicitation step" everywhere. One fresh call, model Sonnet, agent type `pilot-forecaster`, after Deliberate's final call. It sees only the final call's text.
+The arm is named "Deliberate plus elicitation step" everywhere. One fresh call, model Sonnet, agent type `fomc-pilot:pilot-forecaster`, after Deliberate's final call. It sees only the final call's text.
 
 > The file {final call path} is the final answer of an analysis. It states a probability for each of five outcomes: cut50, cut25, hold, hike25 and hike50.
 >
@@ -73,4 +73,4 @@ The parser reads only the file this call writes. The final call's text is kept a
 
 ## Agent type for the Fable arm and the elicitation step
 
-Both run as `pilot-forecaster`, defined in `.claude/agents/pilot-forecaster.md`: tools Read and Write only, no web, browser, shell or memory tools.
+Both run as `fomc-pilot:pilot-forecaster`, from the `fomc-pilot` plugin installed on the principal's account (its definition is copied in `.claude/agents/pilot-forecaster.md`): tools Read and Write only, no web, browser, shell or memory tools.

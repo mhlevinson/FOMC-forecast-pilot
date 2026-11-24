@@ -1,6 +1,6 @@
 # Draft changes since design.md was pushed on 22 Nov 2026 (not frozen)
 
-Rows 11-22 come from the dress rehearsal of 23 Nov 2026 (`rehearsal/R/rehearsal_report.md`) and were accepted by the principal on 23-24 Nov. They change mechanics only; no forecasting wording changes.
+Rows 11-25 come from the dress rehearsal of 23 Nov 2026 (`rehearsal/R/rehearsal_report.md`) and were accepted by the principal on 23-24 Nov (rows 23-25 from the dry run of 24 Nov). They change mechanics only; no forecasting wording changes.
 
 These are folded into the frozen design text at the freeze. No forecast, scored or unscored, existed when they were made.
 
@@ -28,3 +28,6 @@ These are folded into the frozen design text at the freeze. No forecast, scored 
 | 20 | 5 | Preflight before T0: frozen-fingerprint check, tests, channel check, tool check of the Fable arm's agent type, one test save. A failure fails the checkpoint, logged. | Makes an unattended run stop cleanly instead of running on a bad setup. |
 | 21 | 4 | Verified files are moved out of `~/Downloads` into the checkpoint folder. | Keeps Downloads from filling with pilot files and keeps each checkpoint's files in one place. |
 | 22 | 5 | The runner sends the principal a short notice at the end of each checkpoint: done or failed, arms valid, commitment address. No prices. | Unattended runs need an outcome signal. |
+| 23 | 2 | The restricted agent type is delivered as a plugin (`fomc-pilot`) installed on the principal's account and named `fomc-pilot:pilot-forecaster`. | Dry run DR (24 Nov): scheduled sessions do not load agent types from the repository; plugin agent types do load. |
+| 24 | 4, 5 | A saved file's fingerprint is its sha256 computed on disk after arrival, with its byte count checked against the in-page count. The in-page sha256 is checked too where the browser tool returns it. | Dry run DR: the Chrome tool redacts long hex strings in its output, so the in-page fingerprint does not reach the runner. |
+| 25 | 11 | CHANNEL CLEAN means: no venue name, no price or probability tied to the decision, and nothing about this experiment, in anything a model call is shown before its prompt. Names and descriptions of the principal's installed tools and skills do not count. | Dry run DR: with memory off, the only hits were skill names (Deliberate, CDL). Accepted by the principal, 24 Nov. |
