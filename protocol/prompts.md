@@ -53,6 +53,24 @@ Claim wording by outcome key:
 | `cut25` | lower the target range by 25 basis points |
 | `cut50` | lower the target range by 50 basis points or more |
 
-The scored run uses the starting claim set by the rule in `questions.md`. The twin run (diagnostic, unscored) uses the twin claim. Which run is scored is recorded before either is dispatched.
+The scored run uses the starting claim set by the rule in `questions.md`. From amendment 16 it is the only Deliberate run at a scored checkpoint; the twin claim is kept for diagnostics only. Which run is scored is recorded before either is dispatched.
 
-The forecast is read by `forecast_tools.parse_forecast` from the text of Deliberate's final call only.
+The forecast is read by `forecast_tools.parse_forecast` from the file the elicitation step writes, and from nothing else (amendment 15).
+
+## Elicitation step (part of the Deliberate arm, amendment 15)
+
+The arm is named "Deliberate plus elicitation step" everywhere. One fresh call, model Sonnet, agent type `pilot-forecaster`, after Deliberate's final call. It sees only the final call's text.
+
+> The file {final call path} is the final answer of an analysis. It states a probability for each of five outcomes: cut50, cut25, hold, hike25 and hike50.
+>
+> Write to the file {answer path} exactly one line, in this shape, with the five numbers the file states for its final forecast in place of the letters, unchanged: "FORECAST | cut50=A ; cut25=B ; hold=C ; hike25=D ; hike50=E".
+>
+> Copy the numbers as written. Do not round, rescale, correct or add anything. If the file does not state a number for all five outcomes, write the single word NO_FORECAST instead. If it states more than one different set, use the one it gives as its final forecast; if that is unclear, write NO_FORECAST.
+>
+> Read no other file. Use your tools only to read that file and write that one file. Then reply with the single word DONE.
+
+The parser reads only the file this call writes. The final call's text is kept and committed beside it, so anyone can check the copy.
+
+## Agent type for the Fable arm and the elicitation step
+
+Both run as `pilot-forecaster`, defined in `.claude/agents/pilot-forecaster.md`: tools Read and Write only, no web, browser, shell or memory tools.
