@@ -1,4 +1,4 @@
-# Prompts (DRAFT - not frozen)
+# Prompts (protocol v4, frozen 24 Nov 2026; see `FREEZE.md`)
 
 The forecasting wording below is fixed before the dress rehearsal. After the rehearsal only mechanics may change, and every change is listed.
 
@@ -71,6 +71,19 @@ The arm is named "Deliberate plus elicitation step" everywhere. One fresh call, 
 
 The parser reads only the file this call writes. The final call's text is kept and committed beside it, so anyone can check the copy.
 
-## Agent type for the Fable arm and the elicitation step
+## Channel check (preflight, run sheet step 3(a); amendment 26)
 
-Both run as `fomc-pilot:pilot-forecaster`, from the `fomc-pilot` plugin installed on the principal's account (its definition is copied in `.claude/agents/pilot-forecaster.md`): tools Read and Write only, no web, browser, shell or memory tools.
+One fresh call, model Sonnet, agent type `fomc-pilot:pilot-forecaster`, with exactly this message:
+
+> Do not use any tool. Answer these questions about what you can see right now, before this message, with YES or NO and, for each YES, the term you saw (no quotes needed):
+> 1. Is there any prediction-market or betting-market name (for example Kalshi, Polymarket, PredictIt, CME FedWatch)?
+> 2. Is there any price, probability or percentage for a Federal Reserve rate decision?
+> 3. Is there any mention of a forecasting experiment, a forecast pilot, or a comparison between an AI system and prediction markets?
+> 4. Is there any mention of the FOMC or a Fed decision outside the names and descriptions of tools or skills?
+> End with one line: CHANNEL CLEAN if all four are NO, otherwise CHANNEL HIT followed by the terms.
+
+The check passes on CHANNEL CLEAN. It is the call's own report of what it was shown, and is described as that.
+
+## Agent type for the Fable arm, the elicitation step and the channel check
+
+All three run as `fomc-pilot:pilot-forecaster`, from the `fomc-pilot` plugin installed on the principal's account (its definition is copied in `.claude/agents/pilot-forecaster.md`): tools Read and Write only, no web, browser, shell or memory tools.

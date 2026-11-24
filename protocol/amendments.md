@@ -1,8 +1,8 @@
-# Draft changes since design.md was pushed on 22 Nov 2026 (not frozen)
+# Changes since design v3 of 22 Nov 2026 - folded into protocol v4, frozen 24 Nov 2026
 
-Rows 11-25 come from the dress rehearsal of 23 Nov 2026 (`rehearsal/R/rehearsal_report.md`) and were accepted by the principal on 23-24 Nov (rows 23-25 from the dry run of 24 Nov). They change mechanics only; no forecasting wording changes.
+Rows 1-10 come from the probes of 22 Nov 2026. Rows 11-28 come from the dress rehearsal of 23 Nov 2026 (`rehearsal/R/rehearsal_report.md`) and the dry runs of 24 Nov, and were accepted by the principal on 23-24 Nov. They change mechanics only; no forecasting wording changes.
 
-These are folded into the frozen design text at the freeze. No forecast, scored or unscored, existed when they were made.
+They are part of the frozen protocol and are folded into `design.md` v4; where a row is more specific than the design text, the row governs. No scored forecast existed when any of them was made; the only forecasts that existed were the rehearsal's and the dry runs' unscored ones.
 
 | # | Section | Change | Why |
 |---|---|---|---|
@@ -31,3 +31,6 @@ These are folded into the frozen design text at the freeze. No forecast, scored 
 | 23 | 2 | The restricted agent type is delivered as a plugin (`fomc-pilot`) installed on the principal's account and named `fomc-pilot:pilot-forecaster`. | Dry run DR (24 Nov): scheduled sessions do not load agent types from the repository; plugin agent types do load. |
 | 24 | 4, 5 | A saved file's fingerprint is its sha256 computed on disk after arrival, with its byte count checked against the in-page count. The in-page sha256 is checked too where the browser tool returns it. | Dry run DR: the Chrome tool redacts long hex strings in its output, so the in-page fingerprint does not reach the runner. |
 | 25 | 11 | CHANNEL CLEAN means: no venue name, no price or probability tied to the decision, and nothing about this experiment, in anything a model call is shown before its prompt. Names and descriptions of the principal's installed tools and skills do not count. | Dry run DR: with memory off, the only hits were skill names (Deliberate, CDL). Accepted by the principal, 24 Nov. |
+| 26 | 11 | The channel check runs on the model arms' agent type with model Sonnet, not Fable, and asks four yes/no questions (`prompts.md`) instead of asking the call to list its pre-prompt context. The context a call is shown before its prompt depends on the agent type, not the model. | Dry runs of 24 Nov: Anthropic's safeguards stopped every request to list the pre-prompt context (Fable twice, Sonnet three times). The yes/no wording returned CHANNEL CLEAN three times, twice in scheduled runs, with no safeguard stop. |
+| 27 | 4, 5 | Moving verified files out of `~/Downloads` may need delete permission there; the runner requests it once, for `~/Downloads` only, and otherwise copies the files, leaves the originals and logs it. | Dry run of 24 Nov 10:38 UTC: the move needed delete permission in Downloads. |
+| 28 | 2, 10 | A model call that writes its answer file but replies with more than DONE has not failed. The answer file governs; the extra reply is logged without numbers. | Dry runs of 24 Nov: one Fable call repeated its forecast line in its reply after writing a valid file. |

@@ -1,4 +1,4 @@
-# Evidence sources (DRAFT - not frozen)
+# Evidence sources (protocol v4, frozen 24 Nov 2026; see `FREEZE.md`)
 
 A document is in the pack if it is listed on its index page when that page is captured at the cutoff. Every address below was opened in a browser on 22 Nov 2026.
 
