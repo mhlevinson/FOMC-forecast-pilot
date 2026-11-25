@@ -1,6 +1,6 @@
-# Experiment design - v4 (frozen 24 Nov 2026) - unattended prospective pilot
+# Experiment design - v5 (frozen 25 Nov 2026) - unattended prospective pilot
 
-**Status: FROZEN, protocol v4, 24 Nov 2026.** The fingerprint of this file and of every other protocol file is recorded in `protocol/FREEZE.md`. v4 is v3 with the changes in `protocol/amendments.md` (rows 1-28) folded in; those rows are part of the frozen protocol and govern where they are more specific than this text. Any later change creates a new version and a new cohort (S1).
+**Status: FROZEN, protocol v5, 25 Nov 2026.** The fingerprint of this file and of every other protocol file is recorded in `protocol/FREEZE.md`. v5 is v3 with the changes in `protocol/amendments.md` (rows 1-29) folded in. It replaces v4 (frozen 24 Nov 2026), under which no forecast was made. The amendment rows are part of the frozen protocol and govern where they are more specific than this text. Any later change creates a new version and a new cohort (S1).
 
 **Rigor budget: audience = hostile reviewer. Scope = pilot.** v3 applies the lab's decisions of 22 Nov 2026 and a written design review of v2 (dispositions in section 17).
 
@@ -39,7 +39,7 @@ The market puts the quarter-point hike near 90%. The design review warned that D
 | Situation | May be said | May not be said |
 |---|---|---|
 | Any pilot result | "At these committed checkpoints, each system gave these probabilities; here is how each scored." | Better or worse forecaster. "Beat the market." Any statement of skill. |
-| A surprise that Deliberate caught in part or called (definitions in section 8) | "Before the decision, in a record committed in advance, Deliberate gave X% to the outcome the market benchmark gave Y%." Stated together with: the starting-claim caveat where it applies (section 8), both Fable figures, and Deliberate's false alarms. | "Deliberate predicts what markets miss." Any wording that drops "one event." Where the surprise is the outcome named in the starting claim: any wording that hides that the result may depend on the starting claim. |
+| A surprise that Deliberate caught in part or called (definitions in section 8) | "Before the decision, in a record committed in advance, Deliberate gave X% to the outcome the market benchmark gave Y%." Stated together with: the anchor check (section 8), both Fable figures, and Deliberate's false alarms. | "Deliberate predicts what markets miss." Any wording that drops "one event." If the anchor check fails or could not be run: any wording that hides that the result depended, or may have depended, on the starting claim. |
 | No surprise | Agreement or disagreement with the benchmark, checkpoint by checkpoint, and what the diagnostics showed. | "Deliberate matched the market" as evidence of quality. |
 | Deliberate against Fable | The score difference for this configuration, with latency and resource use. | "The method adds value" or "structured deliberation beats a plain model." The pilot does not isolate method from model mix, compute, starting claim or probability format. |
 | The benchmark | "A two-venue synthetic benchmark from midpoints." | "The market probability." Any suggestion of a tradable edge. |
@@ -94,7 +94,7 @@ The market puts the quarter-point hike near 90%. The design review warned that D
 >
 > `FORECAST | cut50=__ ; cut25=__ ; hold=__ ; hike25=__ ; hike50=__`
 
-**Which Deliberate run is scored (S9).** One run per checkpoint with the rule claim, named as the scored run before dispatch. It is the only Deliberate run at a scored checkpoint (amendment 16).
+**Which Deliberate run is scored (S9).** One run per checkpoint with the rule claim, named as the scored run before dispatch. The only other Deliberate run on the same pack is the twin run, a diagnostic (section 9, amendment 29).
 
 ## 3. Reading the forecast: a line and a parser, no model
 
@@ -219,12 +219,12 @@ Every checkpoint: cutoff 09:00, deadline 15:00, Israel time. Operating dates wer
 | Caught in part | Deliberate's probability on that outcome was at least 10 points above the benchmark's and at least double it |
 | Called | That outcome was Deliberate's top outcome |
 | False alarm | An outcome that did not happen on which Deliberate stood 10 points or more above the benchmark. Reported for every checkpoint, surprise or not |
-| Anchor check | Not available at scored checkpoints: the twin run was dropped (amendment 16, section 9). If the surprise is the outcome named in the starting claim, the result is reported as possibly dependent on the starting claim, and may not be reported plainly |
+| Anchor check | The twin run's probability on the same outcome at the same checkpoint (section 9). If the surprise is the outcome named in the starting claim and the twin run does not itself meet "caught in part", the result is reported as dependent on the starting claim. If that checkpoint's twin run failed, the result is reported as possibly dependent on the starting claim |
 
 **Worked example.** Benchmark on 20 Nov: hold 4.1, hike 25 at 90.5, hike 50+ at 4.7. Suppose Deliberate's final line says hold 15, hike 25 at 78, hike 50+ at 6.
 
 - If the Fed hikes 25 (no surprise): benchmark 0.013, Deliberate 0.075. Deliberate pays a small price for its doubt.
-- If the Fed holds (a surprise): benchmark 1.74, Deliberate 1.33. "Caught in part" is met: 15 is more than 10 points above 4.1 and more than double it. Because "hold" is also the starting claim and no twin run exists, it is reported as possibly dependent on the starting claim.
+- If the Fed holds (a surprise): benchmark 1.74, Deliberate 1.33. "Caught in part" is met: 15 is more than 10 points above 4.1 and more than double it. Whether it may be reported plainly then depends on the anchor check, because "hold" is also the starting claim.
 
 **Exploratory, always labelled so**
 
@@ -240,11 +240,11 @@ Every checkpoint: cutoff 09:00, deadline 15:00, Israel time. Operating dates wer
 
 | Diagnostic | What it is | When | Why |
 |---|---|---|---|
-| **Twin run** | Deliberate on the same pack with the opposite starting claim, set by rule: a 25 bp move in the direction of the FOMC's most recent change (today: "hike 25"). If the rule claim is itself a move of any size, the twin is "no change" (amendment 2) | Rehearsal only. Dropped from scored checkpoints (amendment 16): each run takes 1.2-1.5 hours and two do not fit the window | Shows how much the answer follows the claim it was handed. Without it the anchor check is not available (section 8) |
+| **Twin run** | Deliberate on the same pack with the opposite starting claim, set by rule: a 25 bp move in the direction of the FOMC's most recent change (today: "hike 25"). If the rule claim is itself a move of any size, the twin is "no change" (amendment 2). Starts after the day's scored runs end, is not bound by the deadline, has its own elicitation step and its own witnessed commitment (amendment 29) | Rehearsal; K1-K4, J1, J2, J6 | Shows how much the answer follows the claim it was handed. Required for the anchor check |
 | **Repeat run** | Deliberate twice on the same pack with the same claim | Rehearsal only (amendment 16) | Shows run-to-run variability |
 | **Parser tests** | Made-up answers through the parser | Before the freeze | Section 3 |
 
-Budget: 2 rehearsal runs (scored-style and twin), then 4 scored runs for December and 6 for January. 12 in total, within the cap of 20 (decision 4).
+Budget: 2 rehearsal runs (scored-style and twin), 8 for December (4 scored, 4 twins), 9 for January (6 scored, 3 twins). 19 in total, within the cap of 20 (decision 4).
 
 ## 10. What the runner must do
 
@@ -333,7 +333,7 @@ Kept privately by the lab
 | A browser on the lab's machine can save raw venue responses and page text unaltered | Checked 24 Nov: Chrome saves from all five sites with no clicks, fingerprints on disk (amendments 11, 24) |
 | An independent web archive can capture the commitment page | Assumed - rehearsal |
 | Deliberate ends on one valid FORECAST line | Not reliable in the rehearsal; elicitation step added and checked against the rehearsal output (amendment 15) |
-| Pack size Deliberate can take; six-hour window is enough | Rehearsal: one Deliberate run takes 1.2-1.5 hours; one run fits, two do not (amendment 16) |
+| Pack size Deliberate can take; six-hour window is enough | Rehearsal: one Deliberate run takes 1.2-1.5 hours; the scored run fits with margin, and the twin may end after the deadline (amendment 29) |
 | January contract identifiers | Checked 22 Nov (`venues.md`, amendment 4) |
 | Exact models, or only model families, can be pinned on this channel | Model aliases are requested per call; the model the harness records is reported as recorded (S11) |
 | Unattended run end to end (folders, agent type, Chrome saves, channel check, one Fable call, elicitation, Deliberate start) | Checked 24 Nov in two scheduled dry runs, all seven tests passed |
@@ -358,6 +358,7 @@ Kept privately by the lab
 | Date | Change | Why | Favours | Forecast or outcome data existing |
 |---|---|---|---|---|
 | 20 Nov 2026 | v1 to v2: standard of evidence and claims register added; public ledger; pack built by rule; failures scored | Rigor budget set to hostile reviewer | No arm | None |
+| 25 Nov 2026 | v4 to v5, frozen: twin run restored at K1-K4, J1, J2 and J6 after the day's scored runs, with its own commitment; anchor check restored (amendment 29) | Decision of the principal | No arm. Restores the check that limits what a surprise may be reported as | Unscored rehearsal and dry-run forecasts only; no forecast under v4 |
 | 24 Nov 2026 | v3 to v4, frozen: amendments 1-28 folded in - Chrome capture with fingerprints on disk; memory paused and a channel check before every checkpoint; unattended scheduled runs replace supervision; restricted file-only agent type for the model arms; "Deliberate plus elicitation step"; twin and repeat runs dropped from scored checkpoints, so the anchor check is not available; publication through the GitHub connector | Dress rehearsal and dry runs | No arm. Dropping the anchor check narrows what a surprise may be reported as | Unscored rehearsal and dry-run forecasts only |
 | 22 Nov 2026 | v2 to v3: reframed as a supervised pilot; replay removed; commit-measure-disclose with a separate quote collector; two named comparisons; forecast line and parser replace the card reader; starting claim defined mechanically and named as part of the system; twin-run diagnostic; reduced source list with manifest and difference report, word filter removed; benchmark failure handling; one primary comparison; denominators defined; freeze moved to before the first scored forecast; pooled 30-question test removed; surprise reading pre-declared; schedule moved to mornings with a deadline; unattended runs removed | The lab's decisions and the design review of v2 | No arm; narrows what may be claimed | None |
 
