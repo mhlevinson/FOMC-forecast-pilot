@@ -1,4 +1,4 @@
-# Prompts (protocol v4, frozen 24 Nov 2026; see `FREEZE.md`)
+# Prompts (protocol v5, frozen 25 Nov 2026; see `FREEZE.md`)
 
 The forecasting wording below is fixed before the dress rehearsal. After the rehearsal only mechanics may change, and every change is listed.
 
@@ -53,7 +53,9 @@ Claim wording by outcome key:
 | `cut25` | lower the target range by 25 basis points |
 | `cut50` | lower the target range by 50 basis points or more |
 
-The scored run uses the starting claim set by the rule in `questions.md`. From amendment 16 it is the only Deliberate run at a scored checkpoint; the twin claim is kept for diagnostics only. Which run is scored is recorded before either is dispatched.
+The scored run uses the starting claim set by the rule in `questions.md`. At K1-K4, J1, J2 and J6 the twin run (diagnostic, unscored, amendment 29) uses the same settings and wording with the twin claim from `questions.md`. Which run is scored is recorded before either is dispatched.
+
+The elicitation step below is run on the twin's final call too, with its own file paths.
 
 The forecast is read by `forecast_tools.parse_forecast` from the file the elicitation step writes, and from nothing else (amendment 15).
 

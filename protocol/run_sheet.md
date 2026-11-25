@@ -1,4 +1,4 @@
-# Run sheet - one checkpoint (protocol v4, frozen 24 Nov 2026; see `FREEZE.md`)
+# Run sheet - one checkpoint (protocol v5, frozen 25 Nov 2026; see `FREEZE.md`)
 
 This sheet governs alone for a checkpoint. If it and `design.md` disagree, the runner records the disagreement in `deviations.md`, follows this sheet, and the principal adjudicates afterwards. Anything not written here is not done. A checkpoint runs unattended (amendment 13): the runner never waits for a person, and every decision it would have asked about is either fixed here or logged and left for the principal.
 
@@ -10,13 +10,13 @@ This sheet governs alone for a checkpoint. If it and `design.md` disagree, the r
 | Runner | A scheduled session started at T0. Conducts, records, commits, publishes. Forecasts nothing | Pack and forecasts. **Never opens the `private/market_*` folders before T3** |
 | Document collector | The runner itself, driving the principal's Chrome through Claude in Chrome | Official pages only |
 | Quote collector | One helper call on Sonnet, at T0 and again at T2, driving the same Chrome | Venue pages only. Reports file names, byte counts and fingerprints, never prices |
-| Model arms | Ten Fable calls; Deliberate (scored run only) plus its elicitation step | The pack file and the question. Nothing else |
+| Model arms | Ten Fable calls; Deliberate (scored run) plus its elicitation step; at K1-K4, J1, J2 and J6 the twin Deliberate run (diagnostic, unscored) plus its own elicitation step | The pack file and the question. Nothing else |
 
 ## Standing setup (done once by the principal, checked by the runner at every checkpoint)
 
 - "Generate memory from chats" is paused for the whole pilot.
 - One Chrome profile has the Claude extension enabled, with "Ask where to save each file before downloading" off, downloads to `~/Downloads`, and automatic downloads allowed for `[*.]federalreserve.gov`, `[*.]bls.gov`, `[*.]bea.gov`, `[*.]kalshi.com`, `[*.]polymarket.com`.
-- On checkpoint days the Mac is awake from 08:45 to 15:00 Israel time, with Chrome and the Claude desktop app open.
+- On checkpoint days the Mac is awake from 08:45 Israel time until the runner's end-of-checkpoint notice arrives (at the latest 19:00 on a day with a twin run), with Chrome and the Claude desktop app open.
 
 ## Folders
 
@@ -28,7 +28,7 @@ In the session workspace: `cp/<ID>/pack.md` (the only input file) and `cp/<ID>/a
 1. Fetch this repository; record its commit in `state.json` and check the sha256 of every file listed in `protocol/FREEZE.md` against the value recorded there. A missing file or a mismatch is a failed checkpoint, logged; nothing runs.
 2. Run the three test files in `protocol/`. All must pass, or the checkpoint fails, logged.
 3. **Preflight.** Check the standing setup: (a) channel check: one fresh call of the type used by the Fable arm, run on model Sonnet, with the channel-check prompt in `prompts.md` (four yes/no questions, amendment 26); it must end CHANNEL CLEAN, meaning no venue name, no price or probability tied to the decision, and nothing about this experiment (names and descriptions of the principal's installed tools and skills do not count, amendment 25). No call is ever asked to list or reproduce what it was shown; (b) the agent type `fomc-pilot:pilot-forecaster` is available and has only Read and Write; (c) one test save in Chrome reaches `~/Downloads` within 30 seconds. A failed (a) or (b) means the model arms do not run and the checkpoint fails, logged. A failed (c) is retried once after 2 minutes; a second failure fails the checkpoint, logged.
-4. Write `state.json`: checkpoint ID, questions, starting claim per `questions.md`, the scored run's name, planned T0 and deadline. Open `deviations.md`.
+4. Write `state.json`: checkpoint ID, questions, starting claim and, where step 14b applies, twin claim per `questions.md`, the scored run's name, the twin run's name, planned T0 and deadline. Open `deviations.md`.
 
 ## T0 - evidence cutoff (09:00 Israel time)
 
@@ -58,6 +58,7 @@ document.body.appendChild(a); a.click(); a.remove();
 12. Dispatch the ten Fable calls together (fresh context each, model Fable, effort high, agent type `fomc-pilot:pilot-forecaster`, which can only read and write files) with the prompt in `prompts.md`. Each writes `cp/<ID>/answers/F01.md` ... `F10.md` and replies only DONE. Keep each call's tool record. Record requested model, recorded model, start and end time.
 13. Run Deliberate (scored run) with the settings and starting claim in `prompts.md`, corpus `cp/<ID>/pack.md`. Before any dispatch, build every read-set file the run's dispatches name, from a written checklist, and check each exists. Each dispatch carries the call-record schema. Save the text of Deliberate's final call as `answers/D_scored_final.md`.
 14. **Elicitation step** (amendment 15). One call, prompt in `prompts.md`, reads `D_scored_final.md` and writes `answers/D_scored.md`. Record its finish time.
+14b. **Twin run** (diagnostic, unscored; amendment 29), at K1-K4, J1, J2 and J6 only, for each question that has one that day. It starts when every scored Deliberate run of the day has ended, never before, and runs exactly as step 13 with the twin claim from `questions.md`. Save its final call as `answers/D_twin_final.md` (on K3/J1, `D_twin_final_<question>.md`), then run the elicitation step on it to write `answers/D_twin.md` (or `D_twin_<question>.md`). It is not bound by the deadline. It never enters `forecasts.json`, the T2 commitment or any score. The rest of the sheet continues while it runs.
 15. One retry of a failed call with the identical message; then it is recorded as failed. An accepted answer file is never regenerated or overwritten. A call record the harness blocks is logged as missing; the runner never writes it for the operator. A call that writes its answer file but replies with more than DONE has not failed: the answer file governs, and the extra reply is logged without any numbers (amendment 28).
 16. Run `forecast_tools.parse_forecast` on every answer file except `D_scored_final.md`. Write `forecasts.json`.
 
@@ -74,7 +75,8 @@ document.body.appendChild(a); a.click(); a.remove();
 22. Fill the compliance record (`design.md`, section 14), including the tool-record scan of every model call.
 23. Publish to `ledger/<ID>/` through the GitHub connector: `pack.sha256`, `manifest.json`, `pack_diff.md`, the answer files, `forecasts.json`, `commitment_private.json`, the two quote tables, the compliance record, `deviations.md`, and `pack.md` split into numbered parts of at most 60 KB (`pack.part01.md`, ...) whose concatenation must reproduce `pack.sha256`. After the push, compare each file's git blob hash on GitHub with the local file; a mismatch is re-pushed once, then logged.
 24. Save every call's transcript to `transcripts/` and copy the Deliberate run folder to `deliberate/`.
-25. Send the principal a short notice: checkpoint done or failed, arms valid, commitment address. No prices.
+24b. **Twin commitment and disclosure** (where step 14b ran), when the twin run and its elicitation step have ended: parse its answer file into `forecasts_twin.json`; run `pack_tools.commit_bundle` with output folder `twin/` over `pack.sha256`, `D_twin_final.md` and `D_twin.md` (with the question suffix where used); push `twin/commitment.json` to `commitments/<ID>-twin.json` through the GitHub connector; witness it as in step 19; then publish `D_twin_final.md`, `D_twin.md`, `forecasts_twin.json` and `twin/commitment_private.json` (as `commitment_private_twin.json`) to `ledger/<ID>/`, checked as in step 23. A twin run not ended by 19:00 Israel time is stopped and recorded as failed; it never resumes on a later day.
+25. Send the principal a short notice, once, after step 24b or, where no twin runs, after step 24: checkpoint done or failed, arms valid, twin run valid or failed or not scheduled, commitment addresses. No prices.
 
 ## Never
 
