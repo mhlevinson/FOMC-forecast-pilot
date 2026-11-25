@@ -1,4 +1,4 @@
-# Venues (protocol v5, frozen 25 Nov 2026; see `FREEZE.md`)
+# Venues (frozen protocol; version and fingerprints in `FREEZE.md`)
 
 The venues are close proxies for the pilot's questions, not identical questions. Their rule texts are not republished here: each is recorded by address, capture time and fingerprint (sha256), so anyone can check the text they retrieve against the one the pilot saw.
 

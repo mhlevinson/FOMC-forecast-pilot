@@ -1,4 +1,4 @@
-# Prompts (protocol v5, frozen 25 Nov 2026; see `FREEZE.md`)
+# Prompts (frozen protocol; version and fingerprints in `FREEZE.md`)
 
 The forecasting wording below is fixed before the dress rehearsal. After the rehearsal only mechanics may change, and every change is listed.
 

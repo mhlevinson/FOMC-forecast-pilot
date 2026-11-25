@@ -1,4 +1,4 @@
-# Questions (protocol v5, frozen 25 Nov 2026; see `FREEZE.md`)
+# Questions (frozen protocol; version and fingerprints in `FREEZE.md`)
 
 Outcome keys used everywhere: `cut50` (cut of 50 bp or more), `cut25` (cut of 25 bp), `hold` (no change), `hike25` (hike of 25 bp), `hike50` (hike of 50 bp or more).
 

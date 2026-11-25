@@ -1,4 +1,4 @@
-# Run sheet - one checkpoint (protocol v5, frozen 25 Nov 2026; see `FREEZE.md`)
+# Run sheet - one checkpoint (frozen protocol; version and fingerprints in `FREEZE.md`)
 
 This sheet governs alone for a checkpoint. If it and `design.md` disagree, the runner records the disagreement in `deviations.md`, follows this sheet, and the principal adjudicates afterwards. Anything not written here is not done. A checkpoint runs unattended (amendment 13): the runner never waits for a person, and every decision it would have asked about is either fixed here or logged and left for the principal.
 
@@ -66,7 +66,7 @@ document.body.appendChild(a); a.click(); a.remove();
 
 17. At the deadline, any arm without an answer file has failed this checkpoint. Late output is kept, labelled late, never scored.
 18. Run `pack_tools.commit_bundle` over `pack.sha256`, the answer files present (including `D_scored_final.md`) and `forecasts.json`. Push `commitment.json` to `commitments/<ID>.json` through the GitHub connector. Record the commit address and server time.
-19. Witness: open `https://web.archive.org/save/<commit address>` in Chrome and record the archive address. If it fails, retry once after 2 minutes, then log and continue.
+19. Witness (amendment 30): in Chrome, open `https://web.archive.org/save`, type the commit's API address `https://api.github.com/repos/mhlevinson/FOMC-forecast-pilot/commits/<commit sha>` into the Save Page Now field and submit. Record the snapshot address it reports (`https://web.archive.org/web/<timestamp>/...`) and check that the snapshot shows the commit sha. If it fails, retry once after 2 minutes, then log and continue.
 20. **Only now: quote collector, capture T2**, as in steps 6-7 with `T2` in the names. Move the files to `private/market_T2/`.
 
 ## T3 - disclosure
