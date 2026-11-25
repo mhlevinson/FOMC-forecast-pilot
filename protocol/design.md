@@ -1,6 +1,6 @@
-# Experiment design - v5 (frozen 25 Nov 2026) - unattended prospective pilot
+# Experiment design - v6 (frozen 25 Nov 2026) - unattended prospective pilot
 
-**Status: FROZEN, protocol v5, 25 Nov 2026.** The fingerprint of this file and of every other protocol file is recorded in `protocol/FREEZE.md`. v5 is v3 with the changes in `protocol/amendments.md` (rows 1-29) folded in. It replaces v4 (frozen 24 Nov 2026), under which no forecast was made. The amendment rows are part of the frozen protocol and govern where they are more specific than this text. Any later change creates a new version and a new cohort (S1).
+**Status: FROZEN, protocol v6, 25 Nov 2026.** The fingerprint of this file and of every other protocol file is recorded in `protocol/FREEZE.md`. v6 is v3 with the changes in `protocol/amendments.md` (rows 1-30) folded in. It replaces v4 (frozen 24 Nov 2026) and v5 (frozen 25 Nov 2026), under which no forecast was made. The amendment rows are part of the frozen protocol and govern where they are more specific than this text. Any later change creates a new version and a new cohort (S1).
 
 **Rigor budget: audience = hostile reviewer. Scope = pilot.** v3 applies the lab's decisions of 22 Nov 2026 and a written design review of v2 (dispositions in section 17).
 
@@ -139,7 +139,7 @@ The market puts the quarter-point hike near 90%. The design review warned that D
 - **Availability deadline.** T0 is 09:00 Israel time. T2 must happen by 15:00 Israel time the same day. An arm not finished by then has failed that checkpoint; its late output is kept, labelled late and never scored. A run never resumes into the next day as the earlier day's forecast. The six-hour window is confirmed in the rehearsal and then frozen.
 - **Why mornings.** US data releases land at 15:30 Israel time, after the deadline, so no scheduled release falls between cutoff and commitment.
 - **The collector** is a separate call. It saves raw venue responses to a folder no model call is given and returns only file names and fingerprints. The runner does not open that folder before T3.
-- **Witness.** This repository's server-side push time, plus a capture of the commitment page by an independent web archive. Git timestamps alone are not treated as proof. The repository blocks rewriting of history.
+- **Witness.** This repository's server-side push time, plus a capture of the commitment's GitHub API commit record by an independent web archive (amendment 30). Git timestamps alone are not treated as proof. The repository blocks rewriting of history.
 - **Unattended runs** (amendment 13). Each checkpoint runs as a scheduled session that follows `run_sheet.md` and never waits for a person. The principal sets up the machine once, receives a notice at the end (done or failed, arms valid, commitment address, no prices) and adjudicates deviations afterwards. A preflight before T0 (fingerprint check, tests, channel check, agent-type check, one test save) fails the checkpoint cleanly if the setup is wrong (amendment 20).
 
 ## 6. The benchmark
@@ -331,7 +331,7 @@ Kept privately by the lab
 | Parser and scoring tools pass their tests, including the worked examples above | Checked 22 Nov |
 | How each venue's order book reports bids and asks; Polymarket's rule on a missing statement | Taken from the design review's reading of the venues' documentation; confirmed in the rehearsal |
 | A browser on the lab's machine can save raw venue responses and page text unaltered | Checked 24 Nov: Chrome saves from all five sites with no clicks, fingerprints on disk (amendments 11, 24) |
-| An independent web archive can capture the commitment page | Assumed - rehearsal |
+| An independent web archive can capture the commitment page | Checked 25 Nov: github.com commit pages return 404 to the archive; the GitHub API commit record is captured and shows the sha and server time (amendment 30) |
 | Deliberate ends on one valid FORECAST line | Not reliable in the rehearsal; elicitation step added and checked against the rehearsal output (amendment 15) |
 | Pack size Deliberate can take; six-hour window is enough | Rehearsal: one Deliberate run takes 1.2-1.5 hours; the scored run fits with margin, and the twin may end after the deadline (amendment 29) |
 | January contract identifiers | Checked 22 Nov (`venues.md`, amendment 4) |
@@ -358,6 +358,7 @@ Kept privately by the lab
 | Date | Change | Why | Favours | Forecast or outcome data existing |
 |---|---|---|---|---|
 | 20 Nov 2026 | v1 to v2: standard of evidence and claims register added; public ledger; pack built by rule; failures scored | Rigor budget set to hostile reviewer | No arm | None |
+| 25 Nov 2026 | v5 to v6, frozen: the archive witness captures the commit's GitHub API record (amendment 30) | The archive could not capture commit pages | No arm | Unscored rehearsal and dry-run forecasts only; no forecast under v4 or v5 |
 | 25 Nov 2026 | v4 to v5, frozen: twin run restored at K1-K4, J1, J2 and J6 after the day's scored runs, with its own commitment; anchor check restored (amendment 29) | Decision of the principal | No arm. Restores the check that limits what a surprise may be reported as | Unscored rehearsal and dry-run forecasts only; no forecast under v4 |
 | 24 Nov 2026 | v3 to v4, frozen: amendments 1-28 folded in - Chrome capture with fingerprints on disk; memory paused and a channel check before every checkpoint; unattended scheduled runs replace supervision; restricted file-only agent type for the model arms; "Deliberate plus elicitation step"; twin and repeat runs dropped from scored checkpoints, so the anchor check is not available; publication through the GitHub connector | Dress rehearsal and dry runs | No arm. Dropping the anchor check narrows what a surprise may be reported as | Unscored rehearsal and dry-run forecasts only |
 | 22 Nov 2026 | v2 to v3: reframed as a supervised pilot; replay removed; commit-measure-disclose with a separate quote collector; two named comparisons; forecast line and parser replace the card reader; starting claim defined mechanically and named as part of the system; twin-run diagnostic; reduced source list with manifest and difference report, word filter removed; benchmark failure handling; one primary comparison; denominators defined; freeze moved to before the first scored forecast; pooled 30-question test removed; surprise reading pre-declared; schedule moved to mornings with a deadline; unattended runs removed | The lab's decisions and the design review of v2 | No arm; narrows what may be claimed | None |
