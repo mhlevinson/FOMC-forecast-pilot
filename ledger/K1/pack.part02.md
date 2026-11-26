@@ -142,9 +142,9 @@ We’ve made a decision that, at that strategy meeting in ’27 and the two stra
 
 I do not anticipate making any policy decision, putting out a policy statement. But what might
 
-we come out with? It’s not obvious yet. There’s more news to come on that. The decision on the
+we come out with? It’s not obvious yet. There’s more news to come on that. The decision on
 
-new format for the meetings is relatively new. It was a robust discussion over a couple of
+the new format for the meetings is relatively new. It was a robust discussion over a couple of
 
 meetings of how to handle that. As we get details of that, which are still now not until next fall,
 
@@ -1238,7 +1238,7 @@ June 2021	0.06	-0.06	0.72	0.72
 September 2021	-0.22	0.06	0.72	0.72
 December 2021	-0.22	0.06	0.83	0.83
 March 2022	-0.56	0.5	1	1
-June 2022	-0.67	0.72	0.89	0.89
+June 2022	-0.67	0.71	0.89	0.89
 September 2022	-0.89	0.95	0.89	0.89
 December 2022	-0.89	0.89	0.84	0.84
 March 2023	-0.94	0.89	0.61	0.61
@@ -1284,7 +1284,7 @@ Percentage points
 
 Make Full Screen
 Variable	2026	2027	2028	2029
-Change in real GDP1	±1.4	±1.8	±2.1	±2.3
+±1.4	±1.8	±2.1	±2.3
 Unemployment rate1	±0.5	±1.3	±1.9	±2.1
 Total consumer prices2	±1.0	±1.7	±1.8	±1.7
 Short-term interest rates3	±0.5	±1.7	±2.3	±2.8
