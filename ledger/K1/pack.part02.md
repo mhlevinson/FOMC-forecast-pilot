@@ -1238,7 +1238,7 @@ June 2021	0.06	-0.06	0.72	0.72
 September 2021	-0.22	0.06	0.72	0.72
 December 2021	-0.22	0.06	0.83	0.83
 March 2022	-0.56	0.5	1	1
-June 2022	-0.67	0.71	0.89	0.89
+June 2022	-0.67	0.72	0.89	0.89
 September 2022	-0.89	0.95	0.89	0.89
 December 2022	-0.89	0.89	0.84	0.84
 March 2023	-0.94	0.89	0.61	0.61
@@ -1276,7 +1276,7 @@ Note: The blue and red lines are based on actual values and median projected val
 
 The confidence interval is assumed to be symmetric except when it is truncated at zero - the bottom of the lowest target range for the federal funds rate that has been adopted in the past by the Committee. This truncation would not be intended to indicate the likelihood of the use of negative interest rates to provide additional monetary policy accommodation if doing so was judged appropriate. In such situations, the Committee could also employ other tools, including forward guidance and large-scale asset purchases, to provide additional accommodation. Because current conditions may differ from those that prevailed, on average, over the previous 20 years, the width and shape of the confidence interval estimated on the basis of the historical forecast errors may not reflect FOMC participants' current assessments of the uncertainty and risks around their projections.
 
-* The confidence interval is derived from forecasts of the average level of short-term interest rates in the fourth quarter of the year indicated; more information about these data is available in table 2. The shaded area encompasses less than a 70 percent confidence interval if the confidence interval has been truncated at zero. Return to table
+* The confidence interval is derived from forecasts of the average level of short-term interest rates in the fourth quarter; more information about these data is available in table 2. The shaded area encompasses less than a 70 percent confidence interval if the confidence interval has been truncated at zero. Return to table
 
 Table 2. Average Historical Projection Error Ranges
 
@@ -1284,7 +1284,7 @@ Percentage points
 
 Make Full Screen
 Variable	2026	2027	2028	2029
-±1.4	±1.8	±2.1	±2.3
+Change in real GDP1	±1.4	±1.8	±2.1	±2.3
 Unemployment rate1	±0.5	±1.3	±1.9	±2.1
 Total consumer prices2	±1.0	±1.7	±1.8	±1.7
 Short-term interest rates3	±0.5	±1.7	±2.3	±2.8
