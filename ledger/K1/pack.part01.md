@@ -709,7 +709,6 @@ growth is noticeably above last year’s pace. The four-week moving average of u
 
 
                                             Page 1 of 18
-
 October 28, 2026                Chairman Warsh’s Press Conference                             FINAL
 
 
@@ -762,7 +761,6 @@ Since becoming Chairman just five months ago, I’ve been honored to work with F
 
 
                                             Page 2 of 18
-
 October 28, 2026                Chairman Warsh’s Press Conference                              FINAL
 
 
@@ -815,7 +813,6 @@ questions.
 
 
                                             Page 3 of 18
-
 October 28, 2026               Chairman Warsh’s Press Conference                             FINAL
 
 
