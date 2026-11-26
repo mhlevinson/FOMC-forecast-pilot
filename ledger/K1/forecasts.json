@@ -1,0 +1,145 @@
+{
+  "D_scored": {
+    "valid": true,
+    "reason": "ok",
+    "line": "FORECAST|cut50=0.3;cut25=0.7;hold=42.2;hike25=53.7;hike50=3.1",
+    "sum_stated": 100.0,
+    "forecast": {
+      "cut50": 0.3,
+      "cut25": 0.7,
+      "hold": 42.2,
+      "hike25": 53.7,
+      "hike50": 3.1
+    }
+  },
+  "F01": {
+    "valid": true,
+    "reason": "ok",
+    "line": "FORECAST|cut50=0.3;cut25=0.7;hold=10.0;hike25=73.0;hike50=16.0",
+    "sum_stated": 100.0,
+    "forecast": {
+      "cut50": 0.3,
+      "cut25": 0.7,
+      "hold": 10.0,
+      "hike25": 73.0,
+      "hike50": 16.0
+    }
+  },
+  "F02": {
+    "valid": true,
+    "reason": "ok",
+    "line": "FORECAST|cut50=0.3;cut25=0.7;hold=17.0;hike25=71.0;hike50=11.0",
+    "sum_stated": 100.0,
+    "forecast": {
+      "cut50": 0.3,
+      "cut25": 0.7,
+      "hold": 17.0,
+      "hike25": 71.0,
+      "hike50": 11.0
+    }
+  },
+  "F03": {
+    "valid": true,
+    "reason": "ok",
+    "line": "FORECAST|cut50=0.4;cut25=1.1;hold=14.0;hike25=74.0;hike50=10.5",
+    "sum_stated": 100.0,
+    "forecast": {
+      "cut50": 0.4,
+      "cut25": 1.1,
+      "hold": 14.0,
+      "hike25": 74.0,
+      "hike50": 10.5
+    }
+  },
+  "F04": {
+    "valid": true,
+    "reason": "ok",
+    "line": "FORECAST|cut50=0.3;cut25=0.7;hold=12.0;hike25=76.0;hike50=11.0",
+    "sum_stated": 100.0,
+    "forecast": {
+      "cut50": 0.3,
+      "cut25": 0.7,
+      "hold": 12.0,
+      "hike25": 76.0,
+      "hike50": 11.0
+    }
+  },
+  "F05": {
+    "valid": true,
+    "reason": "ok",
+    "line": "FORECAST|cut50=0.3;cut25=0.7;hold=11.5;hike25=78.5;hike50=9.0",
+    "sum_stated": 100.0,
+    "forecast": {
+      "cut50": 0.3,
+      "cut25": 0.7,
+      "hold": 11.5,
+      "hike25": 78.5,
+      "hike50": 9.0
+    }
+  },
+  "F06": {
+    "valid": true,
+    "reason": "ok",
+    "line": "FORECAST|cut50=0.3;cut25=0.7;hold=15.0;hike25=73.0;hike50=11.0",
+    "sum_stated": 100.0,
+    "forecast": {
+      "cut50": 0.3,
+      "cut25": 0.7,
+      "hold": 15.0,
+      "hike25": 73.0,
+      "hike50": 11.0
+    }
+  },
+  "F07": {
+    "valid": true,
+    "reason": "ok",
+    "line": "FORECAST|cut50=0.3;cut25=0.7;hold=14.0;hike25=76.0;hike50=9.0",
+    "sum_stated": 100.0,
+    "forecast": {
+      "cut50": 0.3,
+      "cut25": 0.7,
+      "hold": 14.0,
+      "hike25": 76.0,
+      "hike50": 9.0
+    }
+  },
+  "F08": {
+    "valid": true,
+    "reason": "ok",
+    "line": "FORECAST|cut50=0.3;cut25=0.7;hold=14.0;hike25=73.0;hike50=12.0",
+    "sum_stated": 100.0,
+    "forecast": {
+      "cut50": 0.3,
+      "cut25": 0.7,
+      "hold": 14.0,
+      "hike25": 73.0,
+      "hike50": 12.0
+    }
+  },
+  "F09": {
+    "valid": true,
+    "reason": "ok",
+    "line": "FORECAST|cut50=0.3;cut25=0.7;hold=12.0;hike25=77.0;hike50=10.0",
+    "sum_stated": 100.0,
+    "forecast": {
+      "cut50": 0.3,
+      "cut25": 0.7,
+      "hold": 12.0,
+      "hike25": 77.0,
+      "hike50": 10.0
+    }
+  },
+  "F10": {
+    "valid": true,
+    "reason": "ok",
+    "line": "FORECAST|cut50=0.2;cut25=0.6;hold=13.2;hike25=77.0;hike50=9.0",
+    "sum_stated": 100.0,
+    "forecast": {
+      "cut50": 0.2,
+      "cut25": 0.6,
+      "hold": 13.2,
+      "hike25": 77.0,
+      "hike50": 9.0
+    }
+  }
+}
